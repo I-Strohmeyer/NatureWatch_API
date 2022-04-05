@@ -1,0 +1,6 @@
+# Ignore installed packages&dependencies
+node_modules/
+
+# Ignore all logs
+*.log
+
