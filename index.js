@@ -65,15 +65,56 @@ const natureMovies = [
   },
 ];
 
-app.get("/movies", (req, res) => {
-  res.json(natureMovies);
-});
-
+/* ENDPOINTS */
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/doc", express.static("public"));
+app.get("/movies", (req, res) => {
+  res.json(natureMovies);
+});
+
+app.get("/movies/:id", (req, res) => {
+  res.send("Successful GET request returning data on a single movie");
+});
+
+app.get("/movies/:id/details", (req, res) => {
+  res.send("Successful GET request returning details on a single movie");
+});
+
+app.get("/movies/search/:query", (req, res) => {
+  res.send(
+    "Successful GET request returning a list of movies that match the query"
+  );
+});
+
+app.get("/movies/directors/:name", (req, res) => {
+  res.send("Successful GET request returning information about a director");
+});
+
+app.post("/movies/:id/watchlist", (req, res) => {
+  res.send("Successful post request to add a movie to a user's watchlist");
+});
+
+app.post("/users/register", (req, res) => {
+  res.send("Successful post request to register a new user");
+});
+
+app.put("/users/:user_id", (req, res) => {
+  res.send("Successful put request to update a user's information");
+});
+
+app.delete("/movies/:id/watchlist/:user_id", (req, res) => {
+  res.send(
+    "Successful delete request to remove a movie from a user's watchlist"
+  );
+});
+
+app.delete("/users/:user_id", (req, res) => {
+  res.send("Successful delete request to delete a user");
+});
+
+app.use(express.static("public"));
 
 app.use(morgan("common"));
 
