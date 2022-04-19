@@ -54,7 +54,7 @@
         <div class="movie-wrapper">
           <h3>Movie Endpoints</h3>
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion get-item">
               <span class="method get">GET</span
               ><span class="url">&nbsp;<strong>/movies</strong></span
               >Returns a list of all movies in the database
@@ -78,8 +78,8 @@
             </div>
           </div>
 
-          <div class="method-wrapper" id="fold">
-            <button class="accordion">
+          <div class="method-wrapper get-item" id="fold">
+            <button class="accordion get-item">
               <span class="method get">GET</span
               ><span class="url">&nbsp;<strong>/movies/:id</strong></span
               >Returns a single movie by id
@@ -101,7 +101,7 @@
           </div>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion get-item">
               <span class="method get">GET</span
               ><span class="url"
                 >&nbsp;<strong>/movies/:id/details</strong></span
@@ -113,7 +113,7 @@
           </div>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion get-item">
               <span class="method get">GET</span
               ><span class="url"
                 >&nbsp;<strong>/movies/search/:query</strong></span
@@ -125,7 +125,7 @@
           </div>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion get-item">
               <span class="method get">GET</span
               ><span class="url"
                 >&nbsp;<strong>/movies/directors/:name</strong></span
@@ -137,7 +137,7 @@
           </div>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion post-item">
               <span class="method post">POST</span
               ><span class="url"
                 >&nbsp;<strong>/movies/:id/watchlist</strong></span
@@ -149,7 +149,7 @@
           </div>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion delete-item">
               <span class="method delete">DELETE</span
               ><span class="url"
                 >&nbsp;<strong>/movies/:id/watchlist/:user_id</strong></span
@@ -165,7 +165,7 @@
           <h3>User Endpoints</h3>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion post-item">
               <span class="method post">POST</span
               ><span class="url">&nbsp;<strong>/users/register</strong></span
               >Creates a new user
@@ -176,7 +176,7 @@
           </div>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion put-item">
               <span class="method put">PUT</span
               ><span class="url">&nbsp;<strong>/users/:user_id/</strong></span
               >Updates a user's information
@@ -187,7 +187,7 @@
           </div>
 
           <div class="method-wrapper" id="fold">
-            <button class="accordion">
+            <button class="accordion delete-item">
               <span class="method delete">DELETE</span
               ><span class="url">&nbsp;<strong>/users/:user_id/</strong></span
               >Removes & deregisters a user

@@ -213,8 +213,35 @@ section {
   border-radius: 8px;
   padding: 8px 12px;
   text-align: start;
-  border: none;
   cursor: pointer;
+}
+
+.get-item,
+.post-item,
+.put-item,
+.delete-item {
+  border: 1px solid transparent;
+  transition: ease-in-out 0.2s;
+}
+
+.get-item:hover {
+  border: 1px solid #00bcd4;
+  background-color: white;
+}
+
+.post-item:hover {
+  border: 1px solid #00d451;
+  background-color: white;
+}
+
+.put-item:hover {
+  border: 1px solid #ff9800;
+  background-color: white;
+}
+
+.delete-item:hover {
+  border: 1px solid #ff3d00;
+  background-color: white;
 }
 
 .method {
