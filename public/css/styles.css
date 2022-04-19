@@ -90,6 +90,7 @@ body {
   background-position: center;
   color: white;
   padding: 12px;
+  overflow-y: scroll;
 }
 
 main,
