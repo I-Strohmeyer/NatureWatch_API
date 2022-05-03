@@ -282,6 +282,11 @@ section {
   font-family: "Overpass Mono", monospace;
 }
 
+.required {
+  color: red;
+  font-weight: normal;
+}
+
 .active {
   display: block;
 }

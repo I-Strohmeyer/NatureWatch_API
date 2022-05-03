@@ -66,10 +66,14 @@
                 <code>
                    [
                       {
-                        "id": number,
-                        "title": "string",
-                        "director": "string",
-                        "year": number,
+                        "Title": "string",
+                        "Description": "string",
+                        "Director":  {
+                          "Name": "string",
+                          "Description": "string"
+                        },
+                        "Year": number,
+                        "Featured": boolean,
                       } 
                     ] 
                     
@@ -89,12 +93,16 @@
               <h4>Response:</h4>
               <pre>
                 <code>
-                      {
-                        "id": number,
-                        "title": "string",
-                        "director": "string",
-                        "year": number,
-                      }  
+                  {
+                    "Title": "string",
+                    "Description": "string",
+                    "Director":  {
+                      "Name": "string",
+                      "Description": "string"
+                    },
+                    "Year": number,
+                    "Featured": boolean,
+                  } 
                 </code>
               </pre>
             </div>
@@ -104,15 +112,25 @@
             <button class="accordion get-item">
               <span class="method get">GET</span
               ><span class="url"
-                >&nbsp;<strong>/movies/:id/details</strong></span
-              >Returns details of a single movie by id
+                >&nbsp;<strong>/movies/genre/:name</strong></span
+              >Returns data about a movie genre by name
             </button>
             <div class="panel" id="foldout">
-              <p>Returns details of a single movie by id.</p>
+              <p>Returns data about a movie genre by name.</p>
+              <h4>Response:</h4>
+              <pre>
+                <code>
+                  {
+                    "Genre":  {
+                      "Description": "string"
+                    },
+                  } 
+                </code>
+              </pre>
             </div>
           </div>
 
-          <div class="method-wrapper" id="fold">
+          <!--<div class="method-wrapper" id="fold">
             <button class="accordion get-item">
               <span class="method get">GET</span
               ><span class="url"
@@ -122,7 +140,7 @@
             <div class="panel" id="foldout">
               <p>Returns a list of movies that match the search query.</p>
             </div>
-          </div>
+          </div> -->
 
           <div class="method-wrapper" id="fold">
             <button class="accordion get-item">
@@ -133,30 +151,17 @@
             </button>
             <div class="panel" id="foldout">
               <p>Returns information about a director.</p>
-            </div>
-          </div>
-
-          <div class="method-wrapper" id="fold">
-            <button class="accordion post-item">
-              <span class="method post">POST</span
-              ><span class="url"
-                >&nbsp;<strong>/movies/:id/watchlist</strong></span
-              >Adds a movie to the user's watchlist
-            </button>
-            <div class="panel" id="foldout">
-              <p>Adds a movie to the user's watchlist.</p>
-            </div>
-          </div>
-
-          <div class="method-wrapper" id="fold">
-            <button class="accordion delete-item">
-              <span class="method delete">DELETE</span
-              ><span class="url"
-                >&nbsp;<strong>/movies/:id/watchlist/:user_id</strong></span
-              >Removes a movie from the user's watchlist
-            </button>
-            <div class="panel" id="foldout">
-              <p>Removes a movie from the user's watchlist.</p>
+              <h4>Response:</h4>
+              <pre>
+                <code>
+                  {
+                    "Director":  {
+                      "Description": "string",
+                      "Name": "string"
+                    },
+                  } 
+                </code>
+              </pre>
             </div>
           </div>
         </div>
@@ -172,6 +177,17 @@
             </button>
             <div class="panel" id="foldout">
               <p>Creates a new user.</p>
+              <h4>Body:<sup class="required">*required</sup></h4>
+              <pre>
+                <code>
+                  {
+                    "Username": "string",
+                    "Password": "string",
+                    "Email": "string",
+                    "Birthday": Date,
+                  } 
+                </code>
+              </pre>
             </div>
           </div>
 
@@ -183,6 +199,66 @@
             </button>
             <div class="panel" id="foldout">
               <p>Updates a user's information.</p>
+              <h4>Body:<sup class="required">*required</sup></h4>
+              <pre>
+                <code>
+                  {
+                    "Username": "string",
+                    "Password": "string",
+                    "Email": "string",
+                    "Birthday": Date,
+                  } 
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <div class="method-wrapper" id="fold">
+            <button class="accordion post-item">
+              <span class="method post">POST</span
+              ><span class="url"
+                >&nbsp;<strong
+                  >/users/:user_id/watchlist/:movie_id</strong
+                ></span
+              >Adds a movie to the user's watchlist
+            </button>
+            <div class="panel" id="foldout">
+              <p>Adds a movie to the user's watchlist.</p>
+              <h4>Response:</h4>
+              <pre>
+                <code>
+                  {
+                    "Username": "string",
+                    "Password": "string",
+                    "Email": "string",
+                    "FavoriteMovies": []
+                  } 
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          <div class="method-wrapper" id="fold">
+            <button class="accordion delete-item">
+              <span class="method delete">DELETE</span
+              ><span class="url"
+                >&nbsp;<strong
+                  >/users/:user_id/watchlist/:movie_id</strong
+                ></span
+              >Removes a movie from the user's watchlist
+            </button>
+            <div class="panel" id="foldout">
+              <p>Removes a movie from the user's watchlist.</p>
+              <h4>Response:</h4>
+              <pre>
+                <code>
+                  {
+                    "Username": "string",
+                    "Password": "string",
+                    "Email": "string",
+                  } 
+                </code>
+              </pre>
             </div>
           </div>
 
@@ -194,6 +270,12 @@
             </button>
             <div class="panel" id="foldout">
               <p>Removes & deregisters a user</p>
+              <h4>Response:</h4>
+              <pre>
+                <code>
+                  ${Username} was deleted.
+                </code>
+              </pre>
             </div>
           </div>
         </div>
