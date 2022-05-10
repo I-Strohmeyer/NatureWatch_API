@@ -43,8 +43,10 @@ let userSchema = new mongoose.Schema({
   },
   FavoriteMovies: [
     {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Movie",
+      _id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Movie",
+      },
     },
   ],
 });
