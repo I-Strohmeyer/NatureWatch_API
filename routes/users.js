@@ -46,6 +46,7 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(422).json({ errors: errors.array() });
     }
+    console.log(Users);
     let hashedPassword = Users.hashPassword(req.body.Password);
     Users.findOne({ Username: req.body.Username })
       .then((user) => {
