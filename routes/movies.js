@@ -3,7 +3,7 @@ const router = express.Router();
 const passport = require("passport");
 require("../passport");
 
-const Movies = require("../models/Movie");
+const Movies = require("../models/movie");
 
 // Return a list of ALL movies to the user
 router.get(
