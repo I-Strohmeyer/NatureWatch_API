@@ -8,9 +8,9 @@ const Movies = require("../models/movie");
 // Return a list of ALL movies to the user
 router.get(
   "/",
-  //passport.authenticate("jwt", { session: false }),
-  //(req, res) => {
+  passport.authenticate("jwt", { session: false }),
   (req, res) => {
+    //(req, res) => {
     Movies.find().then((err, movies) => {
       if (err) {
         res.send(err);
