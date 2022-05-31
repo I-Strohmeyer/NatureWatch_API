@@ -27,6 +27,22 @@ router.post(
   }
 );
 
+// Get single user by id
+router.get(
+  "/:user_id",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Users.findById(req.params.user_id, (err, user) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      } else {
+        res.json(user);
+      }
+    });
+  }
+);
+
 // Allow new users to register
 router.post(
   "/register",
