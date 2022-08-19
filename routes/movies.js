@@ -5,7 +5,11 @@ require("../passport");
 
 const Movies = require("../models/movie");
 
-// Return a list of ALL movies to the user
+/**
+ * Return a list of ALL movies to the user
+ * @requires passport
+ * @returns {Object[]} movies
+ */
 router.get(
   "/",
   passport.authenticate("jwt", { session: false }),
@@ -21,8 +25,13 @@ router.get(
   }
 );
 
-// Return data (description, genre, director, image URL, whether it’s featured or not)
-// about a single movie by title to the user
+/**
+ * Return data (description, genre, director, image URL, whether it’s featured or not)
+ * about a single movie by title to the user
+ * @requires passport
+ * @param {string} id
+ * @returns {Object} movie
+ */
 router.get(
   "/:_id",
   passport.authenticate("jwt", { session: false }),
@@ -38,7 +47,12 @@ router.get(
   }
 );
 
-// Return data about a genre (description) by name/title (e.g., “Thriller”) to the user
+/**
+ * Return data about a genre (description) by name/title (e.g., “Thriller”) to the user
+ * @param {string} genre.name
+ * @requires passport
+ * @returns {Object} genre
+ */
 router.get(
   "/genre/:name",
   passport.authenticate("jwt", { session: false }),
@@ -54,7 +68,12 @@ router.get(
   }
 );
 
-// Return data about a director (bio, birth year, death year) by name
+/**
+ * Return data about a director (bio, birth year, death year) by name
+ * @param {string} director.name
+ * @requires passport
+ * @returns {Object} director
+ */
 router.get(
   "/directors/:name",
   passport.authenticate("jwt", { session: false }),

@@ -6,7 +6,12 @@ require("../passport");
 
 const Users = require("../models/user");
 
-// Allow users to add a movie to their list of favorites
+/**
+ * Allow users to add a movie to their list of favorites
+ * @requires passport
+ * @param {string} userid
+ * @param {string} movieid
+ */
 router.post(
   "/:user_id/watchlist/:movie_id",
   passport.authenticate("jwt", { session: false }),
@@ -27,7 +32,11 @@ router.post(
   }
 );
 
-// Get single user by id
+/**
+ * Get single user by id
+ * @requires passport
+ * @param {string} userid
+ */
 router.get(
   "/:user_id",
   passport.authenticate("jwt", { session: false }),
@@ -43,7 +52,11 @@ router.get(
   }
 );
 
-// Allow new users to register
+/**
+ * Allow new users to register
+ * @requires passport
+ * @returns {Object} user
+ */
 router.post(
   "/register",
   [
@@ -92,7 +105,12 @@ router.post(
   }
 );
 
-// Allow users to update their user info (username, password, email, date of birth)
+/**
+ * Allow users to update their user info (username, password, email, date of birth)
+ * @requires passport
+ * @param {string} userid
+ * @returns {Object} user
+ */
 router.put(
   "/:user_id",
   [
@@ -136,7 +154,13 @@ router.put(
   }
 );
 
-// Allow users to remove a movie from their list of favorites
+/**
+ * Allow users to remove a movie from their list of favorites
+ * @requires passport
+ * @param {string} userid
+ * @param {string} movieid
+ * @returns {Object} user
+ */
 router.delete(
   "/:user_id/watchlist/:movie_id",
   passport.authenticate("jwt", { session: false }),
@@ -157,7 +181,11 @@ router.delete(
   }
 );
 
-// Allow existing users to deregister
+/**
+ * Allow existing users to delete their account
+ * @requires passport
+ * @param {string} userid
+ */
 router.delete(
   "/:user_id",
   passport.authenticate("jwt", { session: false }),
