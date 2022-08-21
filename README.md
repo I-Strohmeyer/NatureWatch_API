@@ -23,6 +23,14 @@ Endpoints allow:
 
 ## Development
 
+[Dependencies](https://github.com/I-Strohmeyer/NatureWatch/blob/main/package.json)
+
+Install dependencies:
+
+```
+npm install
+```
+
 To run the project locally:
 
 ```
