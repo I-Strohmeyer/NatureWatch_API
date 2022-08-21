@@ -20,3 +20,11 @@ Endpoints allow:
 - Express
 - MongoDB
 - Heroku
+
+## Development
+
+To run the project locally
+
+```
+npm run dev
+```
