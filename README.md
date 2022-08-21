@@ -23,7 +23,7 @@ Endpoints allow:
 
 ## Development
 
-To run the project locally
+To run the project locally:
 
 ```
 npm run dev
