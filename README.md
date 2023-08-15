@@ -19,7 +19,7 @@ Endpoints allow:
 - Node.js
 - Express
 - MongoDB
-- Heroku
+- Render
 
 ## Development
 
