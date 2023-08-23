@@ -4,7 +4,7 @@ Movie API that returns a Collection of nature series & movies. Allows signup & r
 
 RESTful API that executes CRUD operations.
 
-Hosted now on [Render}(https://naturewatch-api.onrender.com) (before: Heroku free tier).
+Hosted now on [Render](https://naturewatch-api.onrender.com) (before: Heroku free tier).
 
 ## Features
 
